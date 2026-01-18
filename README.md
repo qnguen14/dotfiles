@@ -1,35 +1,26 @@
-# Personal Hyprland Dotfiles
+## Dotty Dots
 
-A personalized, dynamic, and minimal configuration for Arch Linux using Hyprland.
-Features **Material You** dynamic theming using `matugen` that automatically generates color schemes from your wallpaper.
+My personal CachyOS (Arch btw) Linux configurations on Hyprland (Wayland).
 
-## Preview
+### Preview
 ![Preview](screenshot.png)
 
-## Packages
+### Packages
 
 | Component | Application |
 |-----------|-------------|
-| **Window Manager** | [Hyprland](https://hyprland.org/) |
-| **Terminal** | [Kitty](https://sw.kovidgoyal.net/kitty/) |
-| **Shell** | [Fish](https://fishshell.com/) |
-| **Bar** | [Waybar](https://github.com/Alexays/Waybar) |
-| **Launcher** | [Fuzzel](https://codeberg.org/dnkl/fuzzel) (Primary) & [Rofi](https://github.com/davatorium/rofi) |
-| **Notifications** | [Mako](https://github.com/emersion/mako) |
-| **Theming** | [Matugen](https://github.com/InioX/matugen) |
-| **System Info** | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| **Compositor** | [hyprland](https://hyprland.org/) |
+| **Terminal** | [kitty](https://sw.kovidgoyal.net/kitty/) |
+| **Shell** | [fish](https://fishshell.com/) |
+| **Bar** | [waybar](https://github.com/Alexays/Waybar) |
+| **Launcher** | [fuzzel](https://codeberg.org/dnkl/fuzzel) & [Rofi](https://github.com/davatorium/rofi) (Wallpaper Selector) |
+| **Notifications** | [mako](https://github.com/emersion/mako) |
+| **Theming** | [matugen](https://github.com/InioX/matugen) |
+| **Fetch** | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 
-## Dependencies
-
-You will need the following packages (names may vary by distro, these are for Arch):
+### Dependencies
 
 ```bash
-# Core
-sudo pacman -S hyprland kitty fish waybar fuzzel rofi mako fastfetch
+paru -S hyprland kitty fish waybar fuzzel rofi mako fastfetch imagemagick playerctl brightnessctl matugen-bin
 
-# Utilities
-sudo pacman -S imagemagick playerctl curl git
-
-# Theming (AUR)
-yay -S matugen-bin
 
