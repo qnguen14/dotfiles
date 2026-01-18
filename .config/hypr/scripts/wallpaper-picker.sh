@@ -2,7 +2,7 @@
 
 # === CONFIG ===
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
-# SYMLINK_PATH="$HOME/.config/hypr/current_wallpaper"
+SYMLINK_PATH="$HOME/.config/hypr/current_wallpaper"
 
 cd "$WALLPAPER_DIR" || exit 1
 
@@ -18,5 +18,5 @@ SELECTED_PATH="$WALLPAPER_DIR/$SELECTED_WALL"
 matugen image "$SELECTED_PATH"
 
 # === CREATE SYMLINK ===
-# mkdir -p "$(dirname "$SYMLINK_PATH")"
-# ln -sf "$SELECTED_PATH" "$SYMLINK_PATH"
+mkdir -p "$(dirname "$SYMLINK_PATH")"
+ln -sf "$SELECTED_PATH" "$SYMLINK_PATH"
