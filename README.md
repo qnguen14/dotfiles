@@ -4,7 +4,7 @@ A personalized, dynamic, and minimal configuration for Arch Linux using Hyprland
 Features **Material You** dynamic theming using `matugen` that automatically generates color schemes from your wallpaper.
 
 ## Preview
-![Preview](.dotfiles/screenshot.png)
+![Preview](screenshot.png)
 
 ## Packages
 
