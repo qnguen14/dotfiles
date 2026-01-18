@@ -40,3 +40,7 @@ input_path = "~/.config/matugen/templates/mako-colors"
 output_path = "~/.config/mako/mako-colors"
 post_hook = "makoctl reload"
 
+[templates.lazygit]
+input_path = "~/.config/matugen/templates/lazygit-theme.yml"
+output_path = "~/.config/lazygit/config.yml"
+
