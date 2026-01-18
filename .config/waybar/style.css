@@ -4,9 +4,11 @@
    VARIABLES
    ----------------------------------------------------- */
 @define-color bg @surface;     
-@define-color fg @on_surface;     
+@define-color fg @on_surface;    
+@define-color sf @surface_bright; 
 @define-color cursor @primary;   
 @define-color textcolor @fg;      
+@define-color urgent @error_container;
 
 * {
     font-family: 'GohuFont 14 Nerd Font Mono', sans-serif;
@@ -28,9 +30,9 @@ window#waybar {
    ----------------------------------------------------- */
 #workspaces button {
     border-radius: 0px;
-    padding: 0 10px;
+    padding: 0 7px;
     background-color: @bg;
-    color: @fg;
+    color: @sf;
     transition: 0.2s ease-in-out;
 }
 
@@ -43,13 +45,14 @@ window#waybar {
 
 /* Active: Use your Theme Green (@cursor) for background, Dark text */
 #workspaces button.active {
-    background-color: @cursor;
-    color: @bg;
+    background-color: @bg;
+    color: @cursor;
+    font-weight: bold;
 }
 
 /* Urgent: Red */
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @urgent;
     color: #ffffff;
 }
 

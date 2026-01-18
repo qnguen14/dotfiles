@@ -13,14 +13,13 @@
         "custom/spotify"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock"
     ],
     "modules-right": [
         "pulseaudio",
         "network",
         "backlight",
         "battery",
-        "clock",
         "power-profiles-daemon"
     ],
     "keyboard-state": {

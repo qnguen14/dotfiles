@@ -10,6 +10,7 @@ import signal
 import gi
 import json
 import os
+import html  # <--- Added import
 from typing import List
 
 logger = logging.getLogger(__name__)
@@ -111,10 +112,17 @@ class PlayerManager:
     def on_metadata_changed(self, player, metadata, _=None):
         logger.debug(f"Metadata changed for player {player.props.player_name}")
         player_name = player.props.player_name
+        
+        # Safe getting of artist/title
         artist = player.get_artist()
-        artist = artist.replace("&", "&amp;")
         title = player.get_title()
-        title = title.replace("&", "&amp;")
+        
+        # Use html.escape instead of replace to handle <, >, &, ", '
+        # We check if they are strings to avoid crashing on None
+        if artist:
+            artist = html.escape(artist)
+        if title:
+            title = html.escape(title)
 
         track_info = ""
         if player_name == "spotify" and "mpris:trackid" in metadata.keys() and ":ad:" in player.props.metadata["mpris:trackid"]:
@@ -122,13 +130,15 @@ class PlayerManager:
         elif artist is not None and title is not None:
             track_info = f"{artist} - {title}"
         else:
-            track_info = title
+            # Safely handle if title is None (though unlikely if player active)
+            track_info = title if title else ""
 
         if track_info:
             if player.props.status == "Playing":
-                track_info = track_info
+                track_info = track_info + " 󰎇"
             else:
-                track_info = track_info + "  󰏤"
+                track_info = track_info + " .󰏤"
+        
         # only print output if no other player is playing
         current_playing = self.get_first_playing_player()
         if current_playing is None or current_playing.props.player_name == player.props.player_name:
