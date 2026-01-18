@@ -1,0 +1,207 @@
+@import "colors.css";
+
+/* -----------------------------------------------------
+   VARIABLES
+   ----------------------------------------------------- */
+@define-color bg @surface;     
+@define-color fg @on_surface;     
+@define-color cursor @primary;   
+@define-color textcolor @fg;      
+
+* {
+    font-family: 'GohuFont 14 Nerd Font Mono', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    min-height: 0;
+
+}
+
+window#waybar {
+    background-color: @bg;
+    color: @cursor;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* -----------------------------------------------------
+   WORKSPACES
+   ----------------------------------------------------- */
+#workspaces button {
+    border-radius: 0px;
+    padding: 0 10px;
+    background-color: @bg;
+    color: @fg;
+    transition: 0.2s ease-in-out;
+}
+
+/* Hover: Slight highlight */
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: @cursor;
+    box-shadow: inherit;
+}
+
+/* Active: Use your Theme Green (@cursor) for background, Dark text */
+#workspaces button.active {
+    background-color: @cursor;
+    color: @bg;
+}
+
+/* Urgent: Red */
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    color: #ffffff;
+}
+
+/* -----------------------------------------------------
+   MODULES GENERAL
+   ----------------------------------------------------- */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#custom-spotify {
+    background-color: @bg; /* Force dark background */
+    padding: 0 10px;
+    color: @cursor;        /* Force green text */
+    margin: 0;
+}
+
+/* -----------------------------------------------------
+   SPECIFIC MODULE TWEAKS
+   ----------------------------------------------------- */
+
+/* Fix the Blue Block issue */
+#tray {
+    background-color: @bg;
+}
+
+#mode {
+    background-color: @cursor;
+    color: @bg;
+}
+
+/* Battery States */
+#battery.charging,
+#battery.plugged {
+    color: @cursor;
+    background-color: @bg;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Network */
+#network.disconnected {
+    color: #f53c3c;
+}
+
+/* Audio */
+#pulseaudio.muted {
+    color: #555555; /* Dimmed when muted */
+}
+
+/* Spotify / Media */
+#custom-media.custom-spotify {
+    background-color: @bg;
+    color: @cursor;
+}
+
+/* Window Title */
+#window {
+    background-color: @bg;
+    color: @cursor;
+    padding: 0 10px;
+}
+
+/* -----------------------------------------------------
+   ANIMATIONS
+   ----------------------------------------------------- */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* -----------------------------------------------------
+   TRAY DRAWER
+   ----------------------------------------------------- */
+
+/* The Group Container */
+#group-tray-drawer {
+    background-color: @bg;
+    color: @cursor;
+}
+
+/* The Toggle Icon (Always Visible) */
+#custom-tray-icon {
+    font-size: 16px;
+    padding: 0 10px;
+    background-color: @bg;
+    color: @cursor;
+    margin-right: 0px;
+}
+
+/* Hover effect for the toggle */
+#custom-tray-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* The Tray itself (Hidden by default) */
+#tray {
+    padding: 0 10px;
+    /* Ensure the background matches so icons don't float */
+    background-color: @bg; 
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* -----------------------------------------------------
+   MPRIS MODULE
+   ----------------------------------------------------- */
+#mpris {
+    background-color: @bg;
+    color: @cursor;
+    padding: 0 10px;
+    margin: 0;
+}
+
+/* Optional: Make the "Paused" state look different (dimmed) */
+#mpris.paused {
+    color: #555555;
+    /* or use a variable if you have one for 'dimmed' text */
+}
+
+/* Optional: Make the "Playing" state bold or highlighted */
+#mpris.playing {
+    color: @cursor;
+    /* font-weight: bold; (Your global font is already bold, so this is redundant) */
+}

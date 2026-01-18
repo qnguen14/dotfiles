@@ -1,0 +1,37 @@
+# General
+default-timeout=3000
+width=350
+height=200
+padding=12
+border-size=2
+layer=overlay
+font=GohuFont 14 Nerd Font Mono
+
+# Colors
+include=~/.config/mako/mako-colors
+
+# Volume OSD
+[app-name=volume]
+group-by=app-name
+format=<b>%s</b> %b
+history=0
+# If you want it anchored to the bottom center:
+anchor=bottom-center
+outer-margin=0,0,30,0
+
+# Brightness OSD
+[app-name=brightnessctl]
+group-by=app-name
+format=<b>%s</b> %b
+history=0
+anchor=bottom-center
+outer-margin=0,0,30,0
+
+# Music
+[app-name=spotify]
+group-by=app-name
+format=<b>%s</b>\n%b
+history=0
+default-timeout=4000
+# Set this to a size you like (e.g., 64, 96, 128) to ensure the album art is visible
+max-icon-size=64
