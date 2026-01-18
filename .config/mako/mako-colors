@@ -4,26 +4,26 @@
 # -------------------------------------------------
 
 # Default notification
-background-color=#131318ff
-text-color=#e4e1e9ff
-border-color=#90909aff
+background-color=#111418ff
+text-color=#e1e2e8ff
+border-color=#8d9199ff
 
 # Progress bar
-progress-color=over #bcc2ff77
+progress-color=over #a2c9fd77
 
 # ------------------------------
 # Urgency levels
 # ------------------------------
 
 [urgency=low]
-background-color=#1b1b21ff
-text-color=#e4e1e9ff
-border-color=#46464fff
+background-color=#191c20ff
+text-color=#e1e2e8ff
+border-color=#43474eff
 
 [urgency=normal]
-background-color=#131318ff
-text-color=#e4e1e9ff
-border-color=#bcc2ffff
+background-color=#111418ff
+text-color=#e1e2e8ff
+border-color=#a2c9fdff
 
 [urgency=critical]
 background-color=#93000aff
