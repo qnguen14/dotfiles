@@ -44,3 +44,8 @@ post_hook = "makoctl reload"
 input_path = "~/.config/matugen/templates/lazygit-theme.yml"
 output_path = "~/.config/lazygit/config.yml"
 
+[templates.cava]
+input_path = "~/.config/matugen/templates/cava-colors"
+output_path = "~/.config/cava/config" 
+post_hook = "pkill -USR2 cava"
+
