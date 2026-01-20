@@ -57,7 +57,10 @@ input_path = "~/.config/matugen/templates/lazygit-theme.yml"
 output_path = "~/.config/lazygit/config.yml"
 
 [templates.cava]
-input_path = "~/.config/matugen/templates/cava-colors"
-output_path = "~/.config/cava/config" 
+input_path = "~/.config/matugen/templates/cava-colors.ini"
+output_path = "~/.config/cava/themes/matugen" 
 post_hook = "pkill -USR2 cava"
 
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/midnight-theme-vesktop.css'
+output_path = '~/.config/vesktop/themes/midnight-discord.css'
