@@ -22,7 +22,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font: "GohuFont 14 Nerd Font Mono 11";
+    font: "MonaspiceNe Nerd Font 11";
     
     /* === COLOR MAPPING (Matches Fuzzel) === */
     /* Fuzzel background=#1a1111ff */
@@ -57,8 +57,8 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
+    border:                      2px solid;
+    border-radius:               12px;
     border-color:                @border-col;
     cursor:                      "default";
     background-color:            @background;

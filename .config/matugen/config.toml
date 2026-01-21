@@ -3,19 +3,6 @@ command = "awww"
 arguments = ["img", "--transition-type", "any", "--transition-fps", "60"]
 set = true
 
-[config]
-run_post_process = """
-# 1. Get the current theme name (e.g., 'adw-gtk3')
-current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
-
-# 2. Switch to a dummy theme (forces refresh)
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-
-# 3. Switch back to your theme
-gsettings set org.gnome.desktop.interface gtk-theme "$current_theme"
-"""
-
-
 [templates.waybar]
 input_path = "~/.config/matugen/templates/colors.css"
 output_path = "~/.config/waybar/colors.css"
