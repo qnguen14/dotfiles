@@ -11,7 +11,7 @@
 @define-color urgent @error_container;
 
 * {
-    font-family: 'MonaspiceNe Nerd Font', sans-serif;
+    font-family: 'JetBrainsMono Nerd Font';
     font-size: 14px;
     font-weight: normal;
     min-height: 0;

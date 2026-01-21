@@ -1,0 +1,25 @@
+layout {
+    focus-ring {
+        width 5
+        active-color   "{{colors.primary.default.hex}}"
+        inactive-color "{{colors.outline.default.hex}}"
+        urgent-color   "{{colors.error.default.hex}}"
+    }
+
+    shadow {
+        color "{{colors.shadow.default.hex}}70"
+    }
+
+    
+
+    insert-hint {
+        color "{{colors.primary.default.hex}}80"
+    }
+}
+
+recent-windows {
+    highlight {
+        active-color   "{{colors.primary.default.hex}}"
+        urgent-color   "{{colors.error.default.hex}}"
+    }
+}

@@ -5,7 +5,7 @@ height=200
 padding=12
 border-size=2
 layer=overlay
-font=GohuFont 14 Nerd Font Mono
+font=MonaspiceNe Nerd Font
 
 # Colors
 include=~/.config/mako/mako-colors
