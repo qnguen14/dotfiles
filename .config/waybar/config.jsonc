@@ -17,6 +17,8 @@
     ],
     "modules-right": [
         "pulseaudio",
+        "cpu",
+        "memory",
         "network",
         "backlight",
         "battery",
@@ -151,7 +153,7 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ",
         "on-click": "nm-connection-editor",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "Ethernet: {ipaddr}  ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
