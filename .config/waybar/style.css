@@ -208,3 +208,14 @@ window#waybar {
     color: @cursor;
     /* font-weight: bold; (Your global font is already bold, so this is redundant) */
 }
+
+
+
+#custom-powermenu {
+    background-color: @bg;
+    color: @cursor;
+    padding-left: 14px;
+    padding-right: 18px; /* Extra padding on right if it's the last item */
+    margin-left: 0px;
+    font-size: 16px;
+}

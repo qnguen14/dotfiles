@@ -22,7 +22,8 @@
         "network",
         "backlight",
         "battery",
-        "power-profiles-daemon"
+        "power-profiles-daemon",
+        "custom/powermenu"
     ],
     "keyboard-state": {
         "numlock": true,
@@ -203,6 +204,11 @@
         "on-click-right" : "hyprctl dispatch focuswindow class:spotify",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5"
+    },
+    "custom/powermenu": {
+    "format": "⏻", 
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/powermenu.sh" 
     },
     "hyprland/workspaces": {
         "format": "{name}",
