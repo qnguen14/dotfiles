@@ -22,5 +22,6 @@ case "${CHOICE:-}" in
     
     sleep 0.2
     wtype -M ctrl -k v -m ctrl
+    hypctl dispatch sendshortcut "CTRL,V"
     ;;
 esac
