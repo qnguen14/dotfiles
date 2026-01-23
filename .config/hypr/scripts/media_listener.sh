@@ -38,6 +38,15 @@ playerctl --player=spotify metadata --format '{{ mpris:trackid }} {{ status }}' 
     # Determine Header
     if [ "$STATUS" == "Playing" ]; then
         HEADER="Now Playing"
+
+        echo "[ $ARTIST / $TITLE 󰎇 ]" > /tmp/spotify_text.txt
+    
+    # 2. ALSO ADD THIS LINE: Copy local art if needed (for non-Spotify files)
+    if [[ "$ART_URL" == file* ]]; then
+        cp "${ART_URL#file://}" "/tmp/spotify_cover.jpg"
+    fi
+
+    
     else
         HEADER="Paused"
     fi

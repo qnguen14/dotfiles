@@ -21,7 +21,7 @@ case "${CHOICE:-}" in
     cliphist decode <<< "$CHOICE" | wl-copy
     
     sleep 0.2
-    wtype -M ctrl -k v -m ctrl
-    hypctl dispatch sendshortcut "CTRL,V"
+    # wtype -M ctrl -k v -m ctrl
+    hyprctl dispatch sendshortcut CTRL, V, activewindow
     ;;
 esac
