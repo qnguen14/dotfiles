@@ -22,7 +22,7 @@
         "network",
         "backlight",
         "battery",
-        "power-profiles-daemon",
+ //       "power-profiles-daemon",
         "custom/powermenu"
     ],
     "keyboard-state": {
