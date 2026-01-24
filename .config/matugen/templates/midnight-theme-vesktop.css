@@ -97,3 +97,11 @@
   color: var(--text-0) !important;
   fill: var(--text-0) !important;
 }
+
+#app-mount, 
+body, 
+.app_a01fb1, 
+.bg_d4b6c5 {
+    background: transparent !important;
+    background-color: transparent !important;
+}
