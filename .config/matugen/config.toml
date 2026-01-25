@@ -51,3 +51,9 @@ post_hook = "pkill -USR2 cava"
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/midnight-theme-vesktop.css'
 output_path = '~/.config/vesktop/themes/midnight-discord.css'
+
+[templates.spotify]
+input_path = '~/.config/matugen/templates/spicetify.ini'
+output_path = '~/.config/spicetify/Themes/Sleek/color.ini'
+# post_hook = 'spicetify watch -s 2>&1 | sed "/Reloaded Spotify/q"'
+
