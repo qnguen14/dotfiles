@@ -218,7 +218,3 @@ window#waybar {
     margin-left: 0px;
     font-size: 16px;
 }
-
-
-
-help me turn this waybar config into floating islands 
