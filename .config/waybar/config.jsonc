@@ -11,7 +11,7 @@
         "hyprland/workspaces",
         "clock",
         "group/tray-drawer",
-        "custom/spotify"
+        "mpris"
     ],
     "modules-center": [
         "hyprland/window"
@@ -177,7 +177,7 @@
         "on-click": "pavucontrol"
     },
     "mpris": {
-        "format": "{status_icon} {artist} - {title}",
+        "format": "{player_icon} {artist} - {title}",
         "format-paused": "{status_icon} {artist} - {title}",
         "player-icons": {
             "default": "",
@@ -185,7 +185,8 @@
             "firefox": ""
         },
         "status-icons": {
-            "paused": "󰏤"
+            "paused": "󰏤",
+            "playing": ""
         },
         "ignored-players": ["firefox"] 
     },
