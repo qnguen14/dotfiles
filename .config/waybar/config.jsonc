@@ -10,7 +10,8 @@
     "modules-left": [
         "hyprland/workspaces",
         "clock",
-        "group/tray-drawer",
+        "tray",
+        // "group/tray-drawer",
         "mpris"
     ],
     "modules-center": [
@@ -18,8 +19,8 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "cpu",
-        "memory",
+        // "cpu",
+        // "memory",
         "network",
         "backlight",
         "battery",
