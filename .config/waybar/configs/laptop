@@ -148,7 +148,7 @@
     "network": {
         "format": "{ifname}",
         "format-wifi": "{icon}  {essid}",
-        "format-ethernet": "  {essid}",
+        "format-ethernet": "  {ipaddr}",
         "format-disconnected": "󰤮  disconnected",
         "format-disabled": "󰤭  disabled",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
