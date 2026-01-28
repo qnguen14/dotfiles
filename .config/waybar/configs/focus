@@ -1,0 +1,276 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "margin-bottom": 0,
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1400, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        // "hyprland/workspaces",
+        // "clock",
+        // // "tray",
+        // // "group/tray-drawer",
+        // "mpris"
+        ""
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "group/tray-drawer",
+        "clock",
+        "network",
+        "custom/powermenu"
+    ],
+    "modules-right": [
+        // "tray",
+        // "pulseaudio",
+        // // "cpu",
+        // // "memory",
+        // "network",
+        // "backlight",
+        // "battery",
+        // // "power-profiles-daemon",s
+        // "custom/powermenu"
+        ""
+    ],
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+          "blueman": "bluetooth",
+        }
+    },
+    "clock": {
+	    // "format" : "{:%R}",  
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%B %d, %H:%M}"
+   },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "󰂄 {capacity}",
+        "format-plugged": " {capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon}  {essid}",
+        "format-ethernet": "  {essid}",
+        "format-disconnected": "󰤮  disconnected",
+        "format-disabled": "󰤭  disabled",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format": "{ifname} - {ipaddr}",
+        "on-click-right": "nm-connection-editor",
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " ",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "mpris": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+        "player-icons": {
+            "default": "",
+            "spotify": "",
+            "firefox": "",
+            "vlc": "󰕼"
+        },
+        "status-icons": {
+            "paused": "󰏤",
+            "playing": ""
+        },
+        // Removed 'firefox' from here so the icon above actually works
+        "ignored-players": ["chromium"], 
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "hyprctl dispatch focuswindow class:1spotify",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5"
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 /home/nguyen/.config/waybar/scripts/mediaplayer.py --player spotify",
+        "format": "  {} ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-click-right" : "hyprctl dispatch focuswindow class:spotify",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5"
+    },
+    "custom/powermenu": {
+    "format": "⏻", 
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/powermenu.sh" 
+    },
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent-workspaces": {
+        "*": 3
+        },
+        "format-icons": {
+            "active": "",
+            "default": "",
+        },
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 45,
+        "separate-outputs": true,
+        "offscreen-css": true,
+        "offscreen-css-text": "(inactive)",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": " $1",
+            "(.*) - fish": "> [$1]",
+            "(.*) - zsh": "> [$1]",
+            "(.*) - $term": "> [$1]",
+            }
+    },
+    "group/tray-drawer": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/tray-icon", // The visible toggle button
+            "tray"              // The hidden tray
+        ],
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false  // Expand to the left
+        }
+    },
+
+    "custom/tray-icon": {
+        "format": "󰅂",  // An arrow or '...' icon (Nerd Font)
+        "tooltip": false
+    },
+
+    "niri/window": {
+        "format": "{title}",
+        "tooltip": false,
+        "seperate-outputs": true,
+    },
+
+    
+
+}
