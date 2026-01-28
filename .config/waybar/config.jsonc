@@ -180,17 +180,24 @@
     },
     "mpris": {
         "format": "{player_icon} {artist} - {title}",
-        "format-paused": "{status_icon} {artist} - {title}",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i>",
         "player-icons": {
             "default": "",
             "spotify": "",
-            "firefox": ""
+            "firefox": "",
+            "vlc": "󰕼"
         },
         "status-icons": {
             "paused": "󰏤",
             "playing": ""
         },
-        "ignored-players": ["firefox"] 
+        // Removed 'firefox' from here so the icon above actually works
+        "ignored-players": ["chromium"], 
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "hyprctl dispatch focuswindow class:1spotify",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5"
     },
     "custom/spotify": {
         "exec": "/usr/bin/python3 /home/nguyen/.config/waybar/scripts/mediaplayer.py --player spotify",

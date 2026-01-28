@@ -11,53 +11,71 @@
 @define-color urgent @error_container;
 
 * {
-    font-family: 'MonaSpiceNe Nerd Font';
+    font-family: 'JetBrainsMono Nerd Font Mono';
     font-size: 14px;
     font-weight: normal;
     min-height: 0;
 }
 
+/* ISLAND CHANGE 1: 
+   Make the main bar background transparent so we can see gaps 
+*/
 window#waybar {
-    background-color: @bg;
+    background-color: transparent; 
     color: @cursor;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 /* -----------------------------------------------------
-   WORKSPACES
+   WORKSPACES ISLAND
    ----------------------------------------------------- */
-#workspaces button {
-    border-radius: 0px;
-    padding: 0 7px;
+/* ISLAND CHANGE 2: 
+   Style the workspace CONTAINER as an island, not just the buttons 
+*/
+#workspaces {
     background-color: @bg;
-    color: @sf;
-    transition: 0.2s ease-in-out;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 20px; /* Round corners */
+    padding: 0 5px;      /* Inner spacing */
 }
 
-/* Hover: Slight highlight */
+#workspaces button {
+    border-radius: 20px; /* Make the hover/active states round too */
+    padding: 0 10px;
+    background-color: transparent; /* Transparent so they sit on the island background */
+    color: @sf;
+    transition: 0.2s ease-in-out;
+    margin-top: 5px;     /* Tiny margin to center vertically if needed */
+    margin-bottom: 5px;
+}
+
 #workspaces button:hover {
     background: rgba(255, 255, 255, 0.1);
     color: @cursor;
     box-shadow: inherit;
 }
 
-/* Active: Use your Theme Green (@cursor) for background, Dark text */
 #workspaces button.active {
-    background-color: @bg;
-    color: @cursor;
+    background-color: @cursor; /* The active pill inside the island */
+    color: @bg;
     font-weight: bold;
 }
 
-/* Urgent: Red */
 #workspaces button.urgent {
     background-color: @urgent;
     color: #ffffff;
 }
 
 /* -----------------------------------------------------
-   MODULES GENERAL
+   MODULE ISLANDS
    ----------------------------------------------------- */
+/* ISLAND CHANGE 3: 
+   Apply island styling to all generic modules 
+*/
 #clock,
 #battery,
 #cpu,
@@ -75,18 +93,32 @@ window#waybar {
 #scratchpad,
 #power-profiles-daemon,
 #mpd,
-#custom-spotify {
-    background-color: @bg; /* Force dark background */
-    padding: 0 10px;
-    color: @cursor;        /* Force green text */
-    margin: 0;
+#custom-spotify,
+#mpris,
+#custom-powermenu,
+#group-tray-drawer {
+    background-color: @bg;
+    padding: 0 15px; /* More padding for pill shape */
+    color: @cursor;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-right: 5px; 
+    margin-left: 5px;
+    border-radius: 20px; /* The pill shape */
+}
+
+/* Fix specific spacing for the first/last items if desired
+   (Optional: depends on your layout) */
+#custom-powermenu {
+    margin-right: 10px;
+    padding-right: 14px; 
+    padding-left: 14px;
 }
 
 /* -----------------------------------------------------
    SPECIFIC MODULE TWEAKS
    ----------------------------------------------------- */
 
-/* Fix the Blue Block issue */
 #tray {
     background-color: @bg;
 }
@@ -94,6 +126,7 @@ window#waybar {
 #mode {
     background-color: @cursor;
     color: @bg;
+    font-weight: bold;
 }
 
 /* Battery States */
@@ -120,7 +153,7 @@ window#waybar {
 
 /* Audio */
 #pulseaudio.muted {
-    color: #555555; /* Dimmed when muted */
+    color: #555555;
 }
 
 /* Spotify / Media */
@@ -129,11 +162,16 @@ window#waybar {
     color: @cursor;
 }
 
-/* Window Title */
+/* Window Title - Make it an island too */
 #window {
     background-color: @bg;
     color: @cursor;
-    padding: 0 10px;
+    padding: 0 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
 }
 
 /* -----------------------------------------------------
@@ -147,33 +185,34 @@ window#waybar {
 }
 
 /* -----------------------------------------------------
-   TRAY DRAWER
+   TRAY DRAWER & GROUPS
    ----------------------------------------------------- */
 
-/* The Group Container */
+/* If you use the Group module for the tray, 
+   we style the group container, not the individual icons 
+*/
 #group-tray-drawer {
     background-color: @bg;
     color: @cursor;
+    /* Margin and Radius handled in the "MODULE ISLANDS" block above */
 }
 
-/* The Toggle Icon (Always Visible) */
 #custom-tray-icon {
     font-size: 16px;
     padding: 0 10px;
-    background-color: @bg;
+    background-color: transparent; /* Let the group background show */
     color: @cursor;
-    margin-right: 0px;
+    margin-top: 5px;
+    border-radius: 20px;
 }
 
-/* Hover effect for the toggle */
-#custom-tray-icon:hover {
+/* #custom-tray-icon:hover {
     background-color: rgba(255, 255, 255, 0.1);
-}
+    border-radius: 20px;
+} */
 
-/* The Tray itself (Hidden by default) */
 #tray {
     padding: 0 10px;
-    /* Ensure the background matches so icons don't float */
     background-color: @bg; 
 }
 
@@ -184,37 +223,17 @@ window#waybar {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
+    border-radius: 20px;
 }
 
 /* -----------------------------------------------------
    MPRIS MODULE
    ----------------------------------------------------- */
 #mpris {
-    background-color: @bg;
+    /* Background handled in generic block, specific colors here */
     color: @cursor;
-    padding: 0 10px;
-    margin: 0;
 }
 
-/* Optional: Make the "Paused" state look different (dimmed) */
 #mpris.paused {
-    color: #555555;
-    /* or use a variable if you have one for 'dimmed' text */
-}
-
-/* Optional: Make the "Playing" state bold or highlighted */
-#mpris.playing {
     color: @cursor;
-    /* font-weight: bold; (Your global font is already bold, so this is redundant) */
-}
-
-
-
-#custom-powermenu {
-    background-color: @bg;
-    color: @cursor;
-    padding-left: 14px;
-    padding-right: 18px; /* Extra padding on right if it's the last item */
-    margin-left: 0px;
-    font-size: 16px;
 }
