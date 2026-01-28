@@ -146,7 +146,7 @@
     "network": {
         "format": "{ifname}",
         "format-wifi": "{icon}  {essid}",
-        "format-ethernet": "  {essid}",
+        "format-ethernet": "  {ipaddr}",
         "format-disconnected": "󰤮  disconnected",
         "format-disabled": "󰤭  disabled",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -190,7 +190,7 @@
             "playing": ""
         },
         // Removed 'firefox' from here so the icon above actually works
-        "ignored-players": ["chromium"], 
+        "ignored-players": ["chromium", "firefox"], 
         "max-length": 40,
         "on-click": "playerctl play-pause",
         "on-click-right": "hyprctl dispatch focuswindow class:1spotify",
