@@ -20,6 +20,7 @@
         "group/tray-drawer",
         "clock",
         "network",
+        "battery",
         "custom/powermenu"
     ],
     "modules-right": [
@@ -84,9 +85,9 @@
         }
     },
     "clock": {
-	    // "format" : "{:%R}",  
+	    "format" : "{:%R}",  
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%B %d, %H:%M}"
+        "format-alt": "{:%B %d, %H:%M}"
    },
     "cpu": {
         "format": "{usage}% ",
@@ -128,11 +129,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "󰂄 {capacity}",
-        "format-plugged": " {capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{icon}",
+        "format-full": "{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "",
+        "format-alt": "{time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
