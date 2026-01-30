@@ -1,12 +1,12 @@
 # General
 default-timeout=3000
 width=350
-height=200
+height=400
 padding=12
 border-size=2
 border-radius=10
 layer=overlay
-font=MonaspiceKr Nerd Font
+font=Ubuntu Nerd Font
 
 # Colors
 include=~/.config/mako/mako-colors

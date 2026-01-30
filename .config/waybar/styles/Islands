@@ -36,7 +36,7 @@ window#waybar {
 #workspaces {
     background-color: @bg;
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 20px; /* Round corners */
@@ -111,7 +111,7 @@ window#waybar {
    (Optional: depends on your layout) */
 #custom-powermenu {
     margin-right: 10px;
-    padding-right: 14px; 
+    padding-right: 18px; 
     padding-left: 14px;
 }
 
@@ -202,14 +202,13 @@ window#waybar {
     padding: 0 10px;
     background-color: transparent; /* Let the group background show */
     color: @cursor;
-    margin-top: 5px;
-    border-radius: 20px;
+    margin: 0;
 }
 
-/* #custom-tray-icon:hover {
+#custom-tray-icon:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-} */
+}
 
 #tray {
     padding: 0 10px;
@@ -235,5 +234,5 @@ window#waybar {
 }
 
 #mpris.paused {
-    color: @cursor;
+    color: #555555;
 }

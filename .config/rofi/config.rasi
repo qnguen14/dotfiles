@@ -22,7 +22,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font: "MonaspiceNe Nerd Font 11";
+    font: "Ubuntu Nerd Font 11";
     
     /* === COLOR MAPPING (Matches Fuzzel) === */
     /* Fuzzel background=#1a1111ff */
