@@ -223,8 +223,10 @@
         "*": 3
         },
         "format-icons": {
-            "active": "",
-            "default": "",
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
         },
     },
     "hyprland/window": {

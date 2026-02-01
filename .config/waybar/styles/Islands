@@ -47,7 +47,7 @@ window#waybar {
     border-radius: 20px; /* Make the hover/active states round too */
     padding: 0 10px;
     background-color: transparent; /* Transparent so they sit on the island background */
-    color: @sf;
+    color: @fg;
     transition: 0.2s ease-in-out;
     margin-top: 5px;     /* Tiny margin to center vertically if needed */
     margin-bottom: 5px;

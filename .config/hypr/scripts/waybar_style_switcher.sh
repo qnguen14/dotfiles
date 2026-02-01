@@ -12,4 +12,6 @@ fi
 
 ln -sf "$STYLES_DIR/$CONF_CHOICE" "$BASE_DIR/style.css"
 
-$HOME/.config/waybar/scripts/launch.sh & notify-send "Waybar Updated" "Active style: $CONF_CHOICE"
+killall -9 waybar
+
+waybar & notify-send "Waybar Updated" "Active style: $CONF_CHOICE"

@@ -12,4 +12,6 @@ fi
 
 ln -sf "$CONFIGS_DIR/$CONF_CHOICE" "$BASE_DIR/config.jsonc"
 
-pkill -USR2 waybar & notify-send "Waybar Updated" "Active config: $CONF_CHOICE"
+killall -9 waybar
+
+waybar & notify-send "Waybar Updated" "Active config: $CONF_CHOICE"
