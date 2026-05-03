@@ -10,13 +10,13 @@ OUTPUTS=( "eDP-1" )
 
 # !!! CRITICAL: Set your screen resolution and scale here !!!
 # Hyprland needs these to re-apply the monitor config with the new Hz.
-RESOLUTION="1920x1080"  # Example: 1920x1080, 2560x1440, etc.
-SCALE="1"             # Example: 1, 1.25, 1.5, 2
+RESOLUTION="1920x1200"  # Example: 1920x1080, 2560x1440, etc.
+SCALE="1.25"             # Example: 1, 1.25, 1.5, 2
 
 # Refresh policy
 HZ_ECO=60
 HZ_BALANCED=60
-HZ_PERFORMANCE=144  # Ensure your screen actually supports this
+HZ_PERFORMANCE=60  # Ensure your screen actually supports this
 
 # Reload waybar to update modules (battery/custom scripts)
 RELOAD_WAYBAR=1
@@ -92,7 +92,7 @@ case "$CHOICE" in
     ;;
 
   "Sleep")
-    systemctl suspend
+    systemctl suspend && hyprlock
     ;;
 
   "Reboot")
@@ -107,19 +107,19 @@ case "$CHOICE" in
   "Eco")
     set_power_profile power-saver
     set_refresh_all "$HZ_ECO"
-    notify "Eco: power-saver @ ${HZ_ECO}Hz"
+    notify "Changed to Eco"
     ;;
 
   "Balanced")
     set_power_profile balanced
     set_refresh_all "$HZ_BALANCED"
-    notify "Balanced: balanced @ ${HZ_BALANCED}Hz"
+    notify "Changed to Balanced"
     ;;
 
   "Performance")
     set_power_profile performance
     set_refresh_all "$HZ_PERFORMANCE"
-    notify "Performance: performance @ ${HZ_PERFORMANCE}Hz"
+    notify "Changed to Performance"
     ;;
 
   *)
